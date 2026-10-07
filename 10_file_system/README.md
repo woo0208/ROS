@@ -153,3 +153,25 @@ colcon build
 
 source install/setup.bash
 ```
+
+
+# 실습과제 2
+
+<img width="1055" height="1287" alt="image" src="https://github.com/user-attachments/assets/9437cb56-824b-40ae-8c62-b6fa2c233841" />
+
+
+
+## 자동으로 생성되는 파일과 디렉터리
+
+| 파일/디렉터리 | 설명 |
+|---|---|
+| `CMakeLists.txt` | 패키지의 빌드 방법과 필요한 의존성을 설정하는 파일 |
+| `package.xml` | 패키지 이름, 버전, 라이선스, 의존성 등의 정보를 저장하는 파일 |
+| `src/` | C/C++ 소스 파일을 저장하는 디렉터리 |
+| `include/first_pkg/` | C/C++ 헤더 파일을 저장하는 디렉터리 |
+| `build/` | 빌드 과정에서 생성되는 중간 파일을 저장하는 디렉터리 |
+| `install/` | 빌드가 완료된 실행 파일과 패키지 결과물을 저장하는 디렉터리 |
+| `log/` | 빌드 과정의 로그와 오류 내용을 저장하는 디렉터리 |
+
+`ros2 pkg create` 실행 시 `CMakeLists.txt`, `package.xml`, `src/`, `include/`가 생성되고, `colcon build` 실행 후 `build/`, `install/`, `log/`가 추가로 생성된다.
+
