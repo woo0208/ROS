@@ -12,11 +12,11 @@ void mysub_callback(rclcpp::Node::SharedPtr node,
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<rclcpp::Node>("node_sub1");
+    auto node = std::make_shared<rclcpp::Node>("node_sub1_s");
     auto qos_profile = rclcpp::QoS(rclcpp::KeepLast(10));
     std::function<void(const std_msgs::msg::String::SharedPtr)> fn = 
     std::bind(mysub_callback, node, std::placeholders::_1);
-    auto mysub = node -> create_subscription<std_msgs::msg::String>("topic_pub1", qos_profile, fn);
+    auto mysub = node -> create_subscription<std_msgs::msg::String>("topic_pub1_1", qos_profile, fn);
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
