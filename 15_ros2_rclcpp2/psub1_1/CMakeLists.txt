@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.8)
-project(psub1)
-
-if(NOT CMAKE_CXX_STANDARD) 
-  set(CMAKE_CXX_STANDARD 14)
-endif()
+project(psub1_1)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+if(NOT CMAKE_CXX_STANDARD) 
+  set(CMAKE_CXX_STANDARD 14)
 endif()
 
 # find dependencies
@@ -27,12 +27,12 @@ if(BUILD_TESTING)
 endif()
 
 #build
-add_executable(pub src/pub.cpp)
-ament_target_dependencies(pub rclcpp std_msgs)
+add_executable(psub1_1 src/pub.cpp)
+ament_target_dependencies(psub1_1 rclcpp std_msgs)
 
-add_executable(sub src/sub.cpp)
-ament_target_dependencies(sub rclcpp std_msgs)
+add_executable(sub1_1 src/sub.cpp)
+ament_target_dependencies(sub1_1 rclcpp std_msgs)
 
-install(TARGETS pub sub DESTINATION lib/${PROJECT_NAME})
+install(TARGETS psub1_1 sub1_1 DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
